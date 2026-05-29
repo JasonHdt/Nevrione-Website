@@ -430,3 +430,16 @@ background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-col
 
     }
     /* COMPONENT <<<<<<<<<<<<<<<<<<< */
+
+/* MAP >>>>>>>>>>>>>>>>>>>> */
+
+#frostlands {
+  align-self: center;
+  justify-self: center;
+  height: 80%;
+  width: 80%;
+}
+
+.leaflet-container {
+    background: #121212;
+}
