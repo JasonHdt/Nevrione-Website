@@ -14,6 +14,14 @@ const map = L.map('frostlands', {
     maxBoundsViscosity: 1.0
 });
 
+var c = new L.Control.Coordinates();
+
+c.addTo(map);
+
+map.on('click', function(e) {
+	c.setCoordinates(e);
+});
+
 L.imageOverlay('../assets/26-05-29.svg', bounds).addTo(map);
 
 map.fitBounds(bounds);
