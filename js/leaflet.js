@@ -1,3 +1,27 @@
+const sidebar = document.getElementById("sidebar");
+const content = document.getElementById("content");
+const title = document.getElementById("title");
+const closeBtn = document.getElementById("close-sidebar");
+
+function openLocation(html, name = "") {
+    content.innerHTML = html;
+    title.textContent = name;
+    sidebar.classList.add("open");
+}
+
+document.addEventListener("click", (e) => {
+    const sidebar = document.getElementById("sidebar");
+
+    if (!sidebar.classList.contains("open")) return;
+
+    const isClickInsideSidebar = sidebar.contains(e.target);
+    const isMarkerClick = e.target.classList.contains("leaflet-marker-icon");
+
+    if (!isClickInsideSidebar && !isMarkerClick) {
+        sidebar.classList.remove("open");
+    }
+});
+
 const width = 4000;
 const height = 3000;
 
@@ -83,13 +107,25 @@ L.polyline([
 ], {
     road: '0 -> 1',
     pane: 'roads',
-    color: 'yellow',
+    color: 'black',
+    dashArray: '10, 10',
     weight: 10
 }).addTo(map);
 
-// PopUP
-node0.bindPopup(`Ambrore`);
-node1.bindPopup("Grotte des contrebandiers");
+
+// CLIC SUR LES NODES
+
+node0.on("click", () => {
+    fetch("../assets/data/lieux/ambrore.html")
+        .then(r => r.text())
+        .then(html => openLocation(html, "Ambrore"));
+});
+
+node1.on("click", () => {
+    fetch("../assets/data/lieux/grotte-contrebandiers.html")
+        .then(r => r.text())
+        .then(html => openLocation(html, "Grotte"));
+});
 
 /*
 // Next Session
