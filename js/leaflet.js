@@ -9,6 +9,11 @@ function openLocation(html, name = "") {
     sidebar.classList.add("open");
 }
 
+
+closeBtn?.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+});
+
 document.addEventListener("click", (e) => {
     const sidebar = document.getElementById("sidebar");
 
@@ -21,6 +26,8 @@ document.addEventListener("click", (e) => {
         sidebar.classList.remove("open");
     }
 });
+
+
 
 const width = 4000;
 const height = 3000;
@@ -118,13 +125,13 @@ L.polyline([
 node0.on("click", () => {
     fetch("../assets/data/lieux/ambrore.html")
         .then(r => r.text())
-        .then(html => openLocation(html, "Ambrore"));
+        .then(html => openLocation(html));
 });
 
 node1.on("click", () => {
-    fetch("../assets/data/lieux/grotte-contrebandiers.html")
+    fetch("../assets/data/lieux/cave1.html")
         .then(r => r.text())
-        .then(html => openLocation(html, "Grotte"));
+        .then(html => openLocation(html));
 });
 
 /*

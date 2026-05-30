@@ -455,6 +455,7 @@ background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-col
 
 #sidebar {
     position: fixed;
+    scrollbar-width: none;
 
     top: 0;
     right: 0;
@@ -489,7 +490,11 @@ background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-col
     cursor: pointer;
 }
 
-.card_title {
-  color: red;
-  background-color: blue;
+.card_list {
+  padding: 1rem;
+  border-bottom: var(--secondary-color) 1px solid
+}
+
+li {
+  margin: .5rem 0;
 }
