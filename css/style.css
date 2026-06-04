@@ -755,6 +755,18 @@ height: 0;
 
 
 @media (width > 600px) {
+#submenu {
+  transform: translateY(0);
+  opacity: 1;
+  height: auto;
+  pointer-events: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 0;
+  width: 100%;
+    display: flex;
+  justify-content: center;
+}
+
       .banner_logo{
       margin-top: 1rem;
     display: flex;
