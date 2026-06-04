@@ -1,53 +1,39 @@
-const sidebar = document.getElementById("sidebar");
-const content = document.getElementById("content");
-const title = document.getElementById("title");
-const closeBtn = document.getElementById("close-sidebar");
+function initMap() {
 
-function openLocation(html, name = "") {
-    content.innerHTML = html;
-    title.textContent = name;
-    sidebar.classList.add("open");
-}
-
-
-closeBtn?.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-});
-
-document.addEventListener("click", (e) => {
     const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const title = document.getElementById("title");
+    const closeBtn = document.getElementById("close-sidebar");
 
-    if (!sidebar.classList.contains("open")) return;
+    closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    closeBtn.classList.remove("open");
+});
 
-    const isClickInsideSidebar = sidebar.contains(e.target);
-    const isMarkerClick = e.target.classList.contains("leaflet-marker-icon");
-
-    if (!isClickInsideSidebar && !isMarkerClick) {
-        sidebar.classList.remove("open");
+    function openLocation(html, name = "") {
+        content.innerHTML = html;
+        title.textContent = name;
+        sidebar.classList.add("open");
+        closeBtn.classList.add("open")
     }
-});
 
+    const width = 4000;
+    const height = 3000;
 
+    const bounds = [
+        [0, 0],
+        [height, width]
+    ];
 
-const width = 4000;
-const height = 3000;
+    const map = L.map("frostlands", {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 4,
+        maxBounds: bounds,
+        maxBoundsViscosity: 1.0
+    });
 
-const bounds = [
-    [0, 0],
-    [height, width]
-];
-
-const map = L.map('frostlands', {
-    crs: L.CRS.Simple,
-    minZoom: -2,
-    maxZoom: 4,
-    maxBounds: bounds,
-    maxBoundsViscosity: 1.0
-});
-
-
-map.fitBounds(bounds);
-
+    map.fitBounds(bounds);
 // ======================
 // Coordonnées au clic
 // ======================
@@ -149,3 +135,4 @@ L.polyline([
 */
 
 
+}

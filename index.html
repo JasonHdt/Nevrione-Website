@@ -1,76 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/style.css">
 
 
-<title>Page d'accueil</title>
+    <title>Accueil</title>
 </head>
+
 <body>
-<div class="banner_container">
-            <div class="banner_logo">
-                <a href="/index.html"><img src="assets/logo.svg" alt=""></a>
-            </div>
-    </div>
-    <div class="hero">
-        <div class="composants_container">
-            <div class="composant_button_container">
-                <a href="pages/map.html"><div class="composant_button_image">
-                    <img src="assets/treasure-map.svg" alt="treasure_map.svg">
+    <div class="sidebar_container">
+        <!-- PC START -->
+        <div class="sidebar_menu_container">
+
+            <header class="banner_logo" id="banner" data-page="index">
+                <img src="assets/logo.svg" alt="">
+                <div id="collapse">
+                    <img src="/assets/castle.svg" alt="">
                 </div>
-                <div class="composant_button_title">
-                    Carte des Frostlands
-                </div>
-            </div>
-            </a>
-                <div class="composant_button_container">
-                    <div class="composant_button_image">
-                        <img src="assets/castle.svg" alt="treasure_map.svg">
-                    </div>
-                    <div class="composant_button_title">
-                        Royaume
-                    </div>
-                </div>
-                
-            <div class="composant_button_container">
-                <div class="composant_button_image">
-                    <img src="assets/cultist.svg" alt="treasure_map.svg">
-                </div>
-                <div class="composant_button_title">
-                    Dramatis Personae
-                </div>
-            </div>
-            <div class="composant_button_container">
-                    <div class="composant_button_image">
-                        <img src="assets/world.svg" alt="treasure_map.svg">
-                    </div>
-                    <div class="composant_button_title">
-                        Points notables
-                    </div>
-                </div>
-            <div class="composant_button_container">
-                <div class="composant_button_image">
-                    <img src="assets/potion-ball.svg" alt="treasure_map.svg">
-                </div>
-                <div class="composant_button_title">
-                    Objets
-                </div>
-            </div>
-            <div class="composant_button_container">
-                <div class="composant_button_image">
-                    <img src="assets/secret-book.svg" alt="treasure_map.svg">
-                </div>
-                <div class="composant_button_title">
-                    Règles
-                </div>
+            </header>
+
+            <div class="sidebar_bar"></div>
+            <div id="submenu">
+                <ul>
+                    <li>
+                        <button data-page="map" class="sidebar_menu">
+                            Carte des Frostlands
+                        </button>
+                    </li>
+                    <li>
+                        <button data-page="rules" class="sidebar_menu">
+                            Règles
+                        </button>
+                        <ul id="hidden-rules">
+                            <li>
+                                <button data-page="rules_archetype" class="sidebar_menu menu2"
+                                    style="padding-left:2rem; color: var(--second-accent-color);">
+                                    Archétype gratuit
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button data-page="legal" class="sidebar_menu">
+                            Mentions légales
+                        </button></li>
+                </ul>
             </div>
         </div>
+
+        <!-- PC END -->
+
+        <div class="mainpage_container">
+
+
+            <p>
+                Bienvenue sur les Archives des Mondes Distants. Ce site regroupe des informations publiques relatives au
+                monde et à ses habitants. </p>
+
+            <p>Il est recommandé de conserver une lecture non méta lors de la consultation de contenus que vos
+                personnages n’auraient pas pu obtenir dans le cadre de l’histoire. </p>
+
+            <p>Les éléments présentés ne sont pas uniquement liés à la progression narrative, mais aussi à la création
+                des
+                personnages et à l’investissement des joueurs dans les différentes campagnes.</p>
+            <p>Les informations ne sont pas techniques, certaines fois manqueront volontairement de détails afin de
+                préserver un peu de mystère</p>
+
+            </p>
+        </div>
     </div>
-    <footer>
-    <a href="pages/legal.html">Légalité</a>
-    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/open.js"></script>
+    <script src="js/drag.js"></script>
+
 </body>
+
 </html>
