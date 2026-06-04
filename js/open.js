@@ -13,20 +13,34 @@ document.addEventListener("click", async (e) => {
 // Définir la cible par rapport au dataset (data-page)
     const page = target.dataset.page;
 
-    function multilinks(name,tableau,insert) {
-        if (page === name){ 
-            console.log(`nom de la page : ${name}
-                tableau ${tableau}
-                insert : ${insert}`);
-            
-        tableau.forEach(element => {
-            element = `
-                        <li><button data-page="rules_${element[0]}" class="sidebar_menu" style="padding-left:2rem; color: var(--second-accent-color);">                                ${element[1]}
-                            </button></li>`
-                                    insert.innerHTML += (element)
-        });
-        }
-    }
+    function multilinks(name, tableau, insert) {
+    if (!insert) return;
+    if (page !== name) return;
+
+    // STOP duplication
+    if (insert.dataset.built === "true") return;
+    insert.dataset.built = "true";
+
+    insert.innerHTML = "";
+
+    const fragment = document.createDocumentFragment();
+
+    tableau.forEach(([key, label]) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+
+        btn.dataset.page = `${name}_${key}`;
+        btn.className = "sidebar_menu";
+        btn.style.paddingLeft = "2rem";
+        btn.style.color = "var(--second-accent-color)";
+        btn.textContent = label;
+
+        li.appendChild(btn);
+        fragment.appendChild(li);
+    });
+
+    insert.appendChild(fragment);
+}
 
     // Pour chaque Datapage remove "Etat Actif" 
     document.querySelectorAll("[data-page]").forEach(btn => {
