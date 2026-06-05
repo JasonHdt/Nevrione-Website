@@ -623,15 +623,24 @@ button {
   transition: .2s;
 }
 
-button:active{
-  background-color: var(--second-accent-color);
-}
+
 button:hover, a:hover{
   transform: scale(1.2);
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: black
 
 }
-
+.sidebar_under_menu {
+  color: var(--accent-color)
+}
+.sidebar_under_menu:hover {
+    background-color: var(--accent-color);
+  color: black
+}
+button:active{
+  background-color: var(--second-accent-color);
+  color: black;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -688,34 +697,6 @@ border-bottom: var(--accent-color) 1px dashed;
 
 .pc{
   display: none;
-}
-
-
-.cadran_container {
-  height: 500px;
-  width: 500px;
-  background-color: white;
-  border-radius: 100%;
-  position : relative
-}
-
-.choix1 {
-  color: black;
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  background-color: black;
-  position: absolute;
-  top: 5%;
-  left: 40%;
-
-  &:hover{
-    background-color: red;
-  }
-}
-
-.choix1.dragging {
-    cursor: grabbing;
 }
 
 

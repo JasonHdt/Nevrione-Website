@@ -30,9 +30,8 @@ document.addEventListener("click", async (e) => {
         const btn = document.createElement("button");
 
         btn.dataset.page = `${name}_${key}`;
-        btn.className = "sidebar_menu";
+        btn.className = "sidebar_under_menu";
         btn.style.paddingLeft = "2rem";
-        btn.style.color = "var(--second-accent-color)";
         btn.textContent = label;
 
         li.appendChild(btn);
