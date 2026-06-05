@@ -667,9 +667,7 @@ color: var(--accent-color);
 
 b {
   color: var(--accent-color);
-  text-transform: uppercase;
   font-size: 1.5rem;
-  
 }
 
 .link {

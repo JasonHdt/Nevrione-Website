@@ -1,9 +1,9 @@
 //  VARIABLES
 const RULES_LINK = [
             ["archetype","Archétype Gratuit"],
-            ["test","Ceci est un Placeholder"],
-            ["test copy","Ceci est un Placeholder 2"],
-            ["test copy 2","Ceci est un Placeholder 3"]
+            ["stamina","Barre d'endurance"],
+            ["craft","Artisanat & Récolte"],
+            ["difficulty","Seuil de difficulté"]
         ]
 // HELPERS
 // CLIQUE SELON DATA-PAGE
