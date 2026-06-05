@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Viaoda+Libre&display=swap');
 
 :root {
-    --primary-color:#2c2c2c;
-    --secondary-color:#505050;
-    --third-color:#f8f8f8;
+    --primary-color:#0d131a;
+    --secondary-color:#18282c;
+    --third-color:#f1e8da;
 
-    --accent-color:#ecc14d;
-        --second-accent-color:#ffdfc1;
+    --accent-color:#e7c247;
+        --second-accent-color:#ca8e8e;
 
     --font-main: "Cormorant", serif;
     --title-font: "Viaoda Libre", serif;
@@ -666,7 +666,7 @@ color: var(--accent-color);
 }
 
 b {
-  color: var(--accent-color);
+  color: var(--second-accent-color);
   font-size: 1.5rem;
 }
 
